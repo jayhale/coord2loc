@@ -1,0 +1,2 @@
+*.msgpack filter=lfs diff=lfs merge=lfs -text
+boundaries/**/* filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,37 @@
+version: '3'
+
+dotenv: ['.env']
+
+tasks:
+  build:
+    deps: [lint]
+    cmds:
+      - uv build --all-packages
+    sources:
+      - src/**/*
+      - pyproject.toml
+      - uv.lock
+    generates:
+      - dist/*.tar.gz
+      - dist/*.whl
+
+  build-polygons:
+    cmds:
+      - uv run scripts/build_polygons.py
+    sources:
+      - scripts/build_polygons.py
+      - boundaries/**/*
+
+  lint:
+    cmds:
+      - ruff format
+      - ruff check --fix
+
+  publish:
+    deps: [build]
+    cmds:
+      - uv publish --token $UV_PUBLISH_TOKEN
+
+  test:
+    cmds:
+      - pytest
