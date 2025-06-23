@@ -1,6 +1,6 @@
 [project]
 name = "coord2loc"
-version = "0.0.2"
+version = "0.0.3q"
 description = "Convert latitude and longitude into localities like countries and states"
 readme = "README.md"
 authors = [
@@ -15,7 +15,9 @@ dependencies = [
 [project.entry-points."coord2loc.data"]
 
 [project.optional-dependencies]
+all = ["coord2loc-can", "coord2loc-usa"]
 usa = ["coord2loc-usa"]
+can = ["coord2loc-can"]
 
 [build-system]
 requires = ["hatchling"]
@@ -45,6 +47,7 @@ extend-select = ["I", "RUF022"]
 
 [tool.uv.sources]
 coord2loc = { workspace = true }
+coord2loc-can = { workspace = true }
 coord2loc-usa = { workspace = true }
 
 [tool.uv.workspace]

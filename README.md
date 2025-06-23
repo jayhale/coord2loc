@@ -11,8 +11,17 @@ Convert latitude and longitude coordinates into localities like countries and st
 
 ## Installation
 
+You can install all locations by selecting the `all` extra:
+
 ```bash
-pip install coord2loc_usa
+pip install coord2loc[all]
+```
+
+Alternatively, you can install specific regions with their respective extras:
+
+```bash
+pip install coord2loc[can]  # Canada
+pip install coord2loc[usa]  # United States
 ```
 
 ## Usage

@@ -16,13 +16,20 @@ tasks:
       - dist/*.whl
 
   build-polygons:
+    deps: [install]
     cmds:
       - uv run scripts/build_polygons.py
     sources:
       - scripts/build_polygons.py
       - boundaries/**/*
 
+  install:
+    cmds:
+      - uv sync --all-packages --dev
+    run: once
+
   lint:
+    deps: [install]
     cmds:
       - ruff format
       - ruff check --fix
@@ -33,5 +40,6 @@ tasks:
       - uv publish --token $UV_PUBLISH_TOKEN
 
   test:
+    deps: [install]
     cmds:
       - pytest
