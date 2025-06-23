@@ -12,7 +12,7 @@ ADMIN_SHAPEFILE = BASE_DIR / "boundaries" / "geoBoundariesCGAZ_ADM1.shp"
 OUTFILES_BASE = BASE_DIR / "packages"
 ZLIB_COMPRESSION_LEVEL = 9
 
-SELECTED_COUNTRIES = ["USA"]
+SELECTED_COUNTRIES = ["USA", "CAN"]
 
 
 def save_data_for_country(

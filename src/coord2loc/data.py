@@ -11,6 +11,7 @@ def discover() -> List[Tuple[str, Traversable, Traversable]]:
     results = []
 
     for entry_point in entry_points().get("coord2loc.data", []):
+        print(entry_point)
         get_data = entry_point.load()
         results.append(get_data())
 
