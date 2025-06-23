@@ -1,6 +1,6 @@
 [project]
 name = "coord2loc"
-version = "0.0.3q"
+version = "0.0.3"
 description = "Convert latitude and longitude into localities like countries and states"
 readme = "README.md"
 authors = [
